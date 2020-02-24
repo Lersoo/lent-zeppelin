@@ -29,4 +29,8 @@ class ZeppelinsController < ApplicationController
     params.require(:zeppelin).permit(:name, :location, :price, :start_date, :end_date)
   end
 
+  def search_params
+    params.permit(:location, :max_price, :date)
+  end
+
 end

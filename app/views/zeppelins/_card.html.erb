@@ -1,0 +1,10 @@
+<div class="zeppelin-card">
+  <div class="zeppelin-img">
+  </div>
+  <div class="zeppelin-info">
+    <h4><%= zeppelin.name %></h4>
+    <p><%= zeppelin.description %></p>
+    <p><%= zeppelin.price %></p>
+    <%= link_to "Book now", new_zeppelin_booking_path(zeppelin), class: 'btn btn-danger'  %>
+  </div>
+</div>
