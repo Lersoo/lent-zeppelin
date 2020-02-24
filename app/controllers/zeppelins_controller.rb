@@ -1,5 +1,5 @@
 class ZeppelinsController < ApplicationController
-  before_action :set_zeppelin
+  before_action :set_zeppelin, only: %i[show]
 
   def index
     @zeppelins = Zeppelin.all
@@ -18,6 +18,10 @@ class ZeppelinsController < ApplicationController
 
   def set_zeppelin
     @zeppelin = Zeppelin.find(params[:id])
+  end
+
+  def search_params
+    params.permit(:location, :max_price, :date)
   end
 
 end
