@@ -1,2 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+    <%= form_for :search do |f| %>
+        <div class="form-group">
+            <%= f.text_field :location,class:'form-control input',id:'search', placeholder:'Search by location' %>
+            <%= f.submit 'Search',class:' btn btn-primary input'%>
+        </div>
+    <% end %>
+</div>
+<div class="container">
+    <div class="card">
+        <h1>hallo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vitae quibusdam assumenda beatae nobis reprehenderit molestias cum hic totam quos, numquam dignissimos culpa ducimus ipsa maiores esse deserunt vero nihil!</p>
+    </div>
+    <div class="card">
+        <h1>hallo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vitae quibusdam assumenda beatae nobis reprehenderit molestias cum hic totam quos, numquam dignissimos culpa ducimus ipsa maiores esse deserunt vero nihil!</p>
+    </div>
+    <div class="card">
+        <h1>hallo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vitae quibusdam assumenda beatae nobis reprehenderit molestias cum hic totam quos, numquam dignissimos culpa ducimus ipsa maiores esse deserunt vero nihil!</p>
+    </div>
+</div>

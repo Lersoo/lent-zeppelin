@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,7 +8,8 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <% if user_signed_in? %>
@@ -27,6 +29,7 @@
           </ul>
         </div>
       </div>
+    </div>
     <% else %>
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
         <%= link_to "/", class: "navbar-brand" do %>
@@ -44,10 +47,8 @@
           </ul>
         </div>
       </div>
+    </div>
     <% end %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
 
     <hr>
@@ -63,8 +64,9 @@
       </div>
 
     </div>
-
-    <%= javascript_pack_tag 'application' %>
+    
+    <%= javascript_pack_tag "application" %>
   </body>
-</html>
-
+  </html>
+  
+  
