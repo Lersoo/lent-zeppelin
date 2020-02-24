@@ -14,6 +14,7 @@ class ZeppelinsController < ApplicationController
 
   def create
     @zeppelin = Zeppelin.new(zeppelin_params)
+    @zeppelin.user = current_user
     @zeppelin.save!
     redirect_to zeppelins_path
   end
