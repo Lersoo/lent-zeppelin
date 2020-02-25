@@ -1,5 +1,40 @@
-<div class="container">
-  <h2>User profile</h2>
-  <p>Name: <%= @user.name %></p>
-  <p>Email: <%= @user.email %></p>
+<div class="dashboard">
+  <div class="side-bar">
+    <h2>My profile</h2>
+    <div class="user-name">
+      <h3>Name</h3>
+      <p><%=@user.name%></p>
+    </div>
+    <div class="user-email">
+      <h3>Email</h3>
+      <p><%= @user.email %></p>
+    </div>
+  </div>
+  <div class="dash-info">
+    <h2>My Bookings</h2>
+    <div class="dash-booking">
+      <% @user.bookings.each do |booking| %>
+        <%= link_to booking_path(booking) do %>
+          <div class="card">
+            <h3><%= booking.zeppelin.name %></h3>
+            <div class="card-foot">
+              <p><%= booking.booking_date %></p>
+              <p><%= booking.total_price %>€</p>
+          </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <h2>My zeppelin</h2>
+    <div class="dash-booking">
+      <% @user.zeppelins.each do |zeppelin| %>
+        <%= link_to  zeppelin_path(zeppelin) do %>
+          <div class="card">
+            <h3><%= zeppelin.name %></h3>
+          </div>
+        <% end %>
+    <% end %>
+    </div>
+  </div>
+
 </div>
