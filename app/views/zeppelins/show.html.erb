@@ -1,3 +1,21 @@
-<h1>Zeppelins#show</h1>
-<p>Find me in app/views/zeppelins/show.html.erb</p>
-
+<div class="container">
+  <h1>
+    <%= @zeppelin.name %>
+  </h1>
+  <p>photo du zep</p>
+  <div class="informations">
+    <div class="text-infos">
+    <p><%= @zeppelin.name %></p>
+    <p><%= @zeppelin.location %></p>
+    <p><%= @zeppelin.price %></p>
+    <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
+      <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+    <% else %>
+      <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+    <% end %>
+    </div>
+    <div class="map">
+      <p>map?</p>
+    </div>
+  </div>
+</div>
