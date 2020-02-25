@@ -21,7 +21,9 @@ $border-color: #8bc4e0;
     justify-content: space-between;
     margin-bottom: 20px;
     border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
+    background-color: #f0f0f0;
 
     margin: $margin;
     width: 300px;
@@ -31,11 +33,10 @@ $border-color: #8bc4e0;
       box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
     }
     .zeppelin-img {
-      width: 100%;
-      img {
-        object-fit: cover;
-        object-position: 50% 50%;
-      }
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px 15px 0 0;
     }
     .zeppelin-info {
       padding: $padding;
