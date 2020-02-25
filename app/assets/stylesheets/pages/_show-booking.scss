@@ -1,0 +1,36 @@
+.booking-content{
+    margin: 0 auto;
+    max-width: 80%;
+    .booking-header{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .booking-img{
+        height: 300px;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+        .booking-img{
+             height: 150px;
+        }
+    }
+
+    .zeppelin-info{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    h3{
+        background-color: #F4F4F4;
+        text-align: center;
+    }
+
+}

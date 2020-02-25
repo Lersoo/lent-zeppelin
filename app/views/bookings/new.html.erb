@@ -1,8 +1,7 @@
 <div class="container">
   <%= simple_form_for [@zeppelin, @booking] do |f| %>
   <%= f.input :booking_date %>
-  <a href="#">Add another date</a>
   <%= f.submit %>
   <% end %>
-  <p>Your total is : €<%= @zeppelin.price %> </p>
+  <p>Your total will be : €<%= @zeppelin.price %> </p>
 </div>
