@@ -3,15 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
   padding: 0px 10px;
   color: rgba(0,0,0,0.3);
-  position: absolute;
-  bottom: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 .footer-links {
   display: flex;
-  align-items: center;
+  align-items: center
 }
 .footer-links a {
   color: black;
