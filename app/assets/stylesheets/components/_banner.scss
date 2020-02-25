@@ -1,6 +1,7 @@
 .banner{
-    background-image: url("ballon.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("ballon.jpg");
     background-size: cover;
+    background-position: center;
     height: 45vh;
     display: flex;
     flex-direction: column;
