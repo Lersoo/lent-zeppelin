@@ -1,44 +1,44 @@
 // Specific CSS for your home-page
 @media (max-width: 850px){
-    .banner .form-group{
-        flex-wrap: wrap;
-        width: 100vw !important;
-    }
-    .banner form{
-        width: 100vw !important;
-    }
-    #search{
-        width: 300px;
-    }
+  .banner .form-group{
+    flex-wrap: wrap;
+    width: 100vw !important;
+  }
+  .banner form{
+    width: 100vw !important;
+  }
+  #search{
+    width: 300px;
+  }
 }
 
 .banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .form-group{
+    width: 800px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    .form-group{ 
-        width: 800px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    align-items: center;
+  }
 
-    .input{
-        margin-right: 20px;
-        border-radius: 20px;
-        height: 50px;
-    }
+  .input{
+    margin-right: 20px;
+    border-radius: 20px;
+    height: 50px;
+  }
 }
 
 .container{
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin-top: 50px;
+  // display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card{
-    max-width: 300px;
-    margin: 20px;
-    text-align: center;
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
 }
