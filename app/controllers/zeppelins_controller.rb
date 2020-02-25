@@ -2,7 +2,9 @@ class ZeppelinsController < ApplicationController
   before_action :set_zeppelin, only: %i[show]
 
   def index
-    @zeppelins = Zeppelin.all
+    search_params
+    p params
+    @zeppelins = Zeppelin.search(params[:search])
   end
 
   def show
@@ -30,7 +32,7 @@ class ZeppelinsController < ApplicationController
   end
 
   def search_params
-    params.permit(:location, :max_price, :date)
+    params.permit(:search, :location, :max_price, :date)
   end
 
 end
