@@ -2,4 +2,6 @@
     background-image: url("ballon.jpg");
     background-size: cover;
     height: 45vh;
+    display: flex;
+    flex-direction: column;
  }

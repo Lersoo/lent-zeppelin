@@ -1,22 +1,12 @@
 <div class="banner">
-    <%= form_for :search do |f| %>
+    <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
         <div class="form-group">
-            <%= f.text_field :location,class:'form-control input',id:'search', placeholder:'Search by location' %>
-            <%= f.submit 'Search',class:' btn btn-primary input'%>
+            <%= f.text_field :location, class:'form-control input', id:'search', placeholder:'Search by location' %>
+            <%= f.submit 'Search', class:' btn btn-primary input'%>
         </div>
     <% end %>
+    <%= link_to 'See all the zeppelins', zeppelins_path, class: 'btn btn-primary' %>
 </div>
 <div class="container">
-    <div class="card">
-        <h1>hallo</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vitae quibusdam assumenda beatae nobis reprehenderit molestias cum hic totam quos, numquam dignissimos culpa ducimus ipsa maiores esse deserunt vero nihil!</p>
-    </div>
-    <div class="card">
-        <h1>hallo</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vitae quibusdam assumenda beatae nobis reprehenderit molestias cum hic totam quos, numquam dignissimos culpa ducimus ipsa maiores esse deserunt vero nihil!</p>
-    </div>
-    <div class="card">
-        <h1>hallo</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vitae quibusdam assumenda beatae nobis reprehenderit molestias cum hic totam quos, numquam dignissimos culpa ducimus ipsa maiores esse deserunt vero nihil!</p>
-    </div>
+  <%= render 'zeppelins/list', zeppelins:  @zeppelins %>
 </div>
