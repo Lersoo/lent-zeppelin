@@ -3,6 +3,7 @@
     <%= @zeppelin.name %>
   </h1>
   <p>photo du zep</p>
+  <h2>Informations</h2>
   <div class="informations">
     <div class="text-infos">
     <p>Zeppelin name : <%= @zeppelin.name %></p>
@@ -17,5 +18,8 @@
     <div class="map">
       <p>map?</p>
     </div>
+  </div>
+  <div class="book-button">
+    <%= link_to "Book now", new_zeppelin_booking_path(@zeppelin), class: 'btn btn-primary'  %>
   </div>
 </div>
