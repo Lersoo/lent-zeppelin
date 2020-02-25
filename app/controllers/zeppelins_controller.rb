@@ -7,6 +7,7 @@ class ZeppelinsController < ApplicationController
   end
 
   def show
+    @zeppelin
   end
 
   def new
