@@ -1,7 +1,11 @@
 require 'date'
 
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[destroy]
+  before_action :set_booking, only: %i[destroy show]
+
+  def show
+    
+  end
 
   def show
   end
