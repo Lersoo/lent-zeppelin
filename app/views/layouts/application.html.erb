@@ -22,6 +22,12 @@
     <%= link_to "/" do %>
     <h2 class="title">Lent Zeppelin</h2>
     <% end %>
+      <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
+        <div class="form-group">
+          <%= f.text_field :location, class:'form-control input', id:'search', placeholder:'Search' %>
+          <%= f.submit 'Search', class:' btn btn-primary input'%>
+        </div>
+      <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
@@ -42,7 +48,15 @@
   <%= link_to "/", class: "navbar-brand" do %>
   <%= image_tag "Logo-LentZep.png" %>
   <% end %>
-  <h2>Lent Zeppelin</h2>
+   <%= link_to "/" do %>
+    <h2 class="title">Lent Zeppelin</h2>
+    <% end %>
+    <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
+      <div class="form-group">
+        <%= f.text_field :location, class:'form-control input', id:'search', placeholder:'Search' %>
+        <%= f.submit 'Search', class:' btn btn-primary input'%>
+      </div>
+    <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
