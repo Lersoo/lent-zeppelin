@@ -12,6 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
   <% if user_signed_in? %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
@@ -30,43 +31,42 @@
       </ul>
     </div>
   </div>
-</div>
-<% else %>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
-  <%= image_tag "Logo-LentZep.png" %>
-  <% end %>
-  <h2>Lent Zeppelin</h2>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Inscription", new_user_registration_path, class: "nav-link" %>
-      </li>
-    </ul>
+
+  <% else %>
+
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag "Logo-LentZep.png" %>
+    <% end %>
+    <h2>Lent Zeppelin</h2>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Inscription", new_user_registration_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
-</div>
-<% end %>
-<%= yield %>
+  <% end %>
 
-<hr>
-<div class="footer">
- <div class="footer-copyright">
-  <%= image_tag "Logo-LentZep.png", height: 30%>
-  © 2020 LentZeppelin, Inc. All rights reserved - Made with <i class="fas fa-heart"></i> by the Lent-Zeppelin Team.
-</div>
-<div class="footer-links">
-  <a href="#"><i class="fab fa-instagram"></i></a>
-  <a href="#"><i class="fab fa-facebook"></i></a>
-  <a href="#"><i class="fab fa-twitter"></i></a>
-</div>
+  <%= yield %>
 
-</div>
-
-<%= javascript_pack_tag "application" %>
+  <div class="footer">
+    <hr>
+    <div class="footer-copyright">
+      <%= image_tag "Logo-LentZep.png", height: 30%>
+      © 2020 LentZeppelin, Inc. All rights reserved - Made with <i class="fas fa-heart"></i> by the Lent-Zeppelin Team.
+    </div>
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+  <%= javascript_pack_tag "application" %>
 </body>
 </html>
 
