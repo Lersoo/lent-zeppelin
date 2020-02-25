@@ -1,5 +1,5 @@
 <div class="zeppelin-card">
-  <div class="zeppelin-img" style="background-image: url(<%= cl_image_path zeppelin.photo.key, crop: :fill if zeppelin.photo.attached? %>")>
+  <div class="zeppelin-img" style="background-image: url(<%= cl_image_path zeppelin.photo.key, crop: :scale if zeppelin.photo.attached? %>")>
   </div>
   <div class="zeppelin-info">
     <div class="zeppelin-name"><%= zeppelin.name %></div>
