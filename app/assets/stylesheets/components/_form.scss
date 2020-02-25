@@ -3,6 +3,12 @@
   width: 70%,
 }
 
+// remove the * on simple form
 abbr[title="required"] {
   display: none;
+}
+
+.form-btn {
+  width: 150px;
+  margin-bottom: 10px;
 }
