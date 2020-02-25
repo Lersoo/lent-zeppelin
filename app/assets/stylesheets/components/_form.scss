@@ -1,13 +1,14 @@
-.container {
+#form-size {
   flex-direction: column;
-  width: 70%,
+  width: 45%,
 }
 
+// remove the * on simple form
 abbr[title="required"] {
   display: none;
 }
 
-.form-group {
-  display: flex;
-  align-items: center;
+.form-btn {
+  width: 150px;
+  margin-bottom: 10px;
 }

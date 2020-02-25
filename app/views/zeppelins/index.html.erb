@@ -1,4 +1,8 @@
 <div class="container">
   <h1>Results</h1>
+  <% if @zeppelins.empty? %>
+  <p>Sorry! There are no zeppelins available for this location.</p>
+  <% else %>
   <%= render 'list', zeppelins:  @zeppelins %>
+  <% end %>
 </div>
