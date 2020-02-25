@@ -8,6 +8,13 @@ $border-color: #8bc4e0;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  .card-link {
+    text-decoration: none;
+    color: $text-color!important;
+    &:hover {
+      color: $background-color!important;
+    }
+  }
   .zeppelin-card {
     display: flex;
     flex-direction: column;
@@ -15,19 +22,18 @@ $border-color: #8bc4e0;
     margin-bottom: 20px;
     border-radius: 15px;
     transition: 0.3s ease;
-    color: $text-color;
+
     margin: $margin;
     width: 300px;
     &:hover {
       transform: scale(1.05);
       background-color: $text-color;
-      color: $background-color;
       box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
     }
     .zeppelin-img {
       width: 100%;
       img {
-        object-fit: contain;
+        object-fit: cover;
         object-position: 50% 50%;
       }
     }
@@ -44,9 +50,6 @@ $border-color: #8bc4e0;
         justify-content: flex-end;
         align-items: center;
       }
-    }
-    .card-link {
-      text-decoration: none;
     }
   }
 }
