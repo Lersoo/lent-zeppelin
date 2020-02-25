@@ -17,20 +17,23 @@
         <%= link_to booking_path(booking) do %>
           <div class="card">
             <h3><%= booking.zeppelin.name %></h3>
-            <p><%= booking.booking_date %></p>
+            <div class="card-foot">
+              <p><%= booking.booking_date %></p>
+              <p><%= booking.total_price %>€</p>
+          </div>
           </div>
         <% end %>
       <% end %>
     </div>
-    <div class="dash-zepplin">
-      <h2>My zeppelin</h2>
+    <h2>My zeppelin</h2>
+    <div class="dash-booking">
       <% @user.zeppelins.each do |zeppelin| %>
         <%= link_to  zeppelin_path(zeppelin) do %>
           <div class="card">
             <h3><%= zeppelin.name %></h3>
           </div>
         <% end %>
-      <% end %>
+    <% end %>
     </div>
   </div>
 

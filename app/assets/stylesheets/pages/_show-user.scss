@@ -4,11 +4,11 @@
 
 .side-bar{
     background-color: #fff;
-    height: 100%;
-    width: 25%;
+    width: 20%;
     text-align: center;
     overflow-wrap: break-word;
     border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+    padding: 5px;
 
     h2{
         margin-top: 20px;
@@ -17,8 +17,52 @@
     .user-name{
         margin: 50px 0;
     }
+}
 
+.dash-info{
+    padding: 2%;
+    width: 100%;
+    
+    h2{
+        text-align: center;
+    }
 
+    .dash-booking{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .dash-booking{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card{
+        width: 280px;
+        height: 200px;
+        padding: 8px;
+        color: #000000;
+        transition: transform ease 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+
+        &:hover{
+            transform: scale(1.03);
+        }
+
+        .card-foot{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    a{
+        text-decoration: none;
+    }
 }
 
 
