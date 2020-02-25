@@ -3,6 +3,7 @@
 $background-color: #e1f2fb;
 $text-color : #2E3436FF;
 $border-color: #8bc4e0;
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +25,11 @@ $border-color: #8bc4e0;
       box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
     }
     .zeppelin-img {
-      min-height: 100px;
+      width: 100%;
+      img {
+        object-fit: contain;
+        object-position: 50% 50%;
+      }
     }
     .zeppelin-info {
       padding: $padding;
@@ -43,6 +48,5 @@ $border-color: #8bc4e0;
     .card-link {
       text-decoration: none;
     }
-
   }
 }
