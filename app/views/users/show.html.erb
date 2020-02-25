@@ -28,6 +28,12 @@
     <h2>My zeppelin</h2>
     <div class="dash-booking">
       <%= render 'zeppelins/list', zeppelins: @user.zeppelins %>
+      <%= link_to new_zeppelin_path do %>
+      <div class="zeppelin-add card">
+        <h3>Add a zeppelin</h3>
+        <span>+</span>
+      </div>
+    <% end %>
     </div>
   </div>
 

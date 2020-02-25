@@ -73,5 +73,19 @@
     }
 }
 
+.zeppelin-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3{
+        color: rgba($color: #000000, $alpha: 0.3);
+    }
+    span{
+        color: rgba($color: #000000, $alpha: 0.3);
+        font-size: 50px;
+    }
+}
+
 
 
