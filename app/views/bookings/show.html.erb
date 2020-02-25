@@ -18,7 +18,7 @@
             <p>Name: <%= @booking.user.name %></p>
             <p>Email: <%= @booking.user.email %></p>
         </div>
-        <%= cl_image_tag '/assets/ballon.jpg', crop: :scale,class:'booking-img' %>
+        <%= cl_image_tag @booking.zeppelin.photo.key, crop: :scale,class:'booking-img' if @booking.zeppelin.photo.attached? %>
     </div>
 </div>
  

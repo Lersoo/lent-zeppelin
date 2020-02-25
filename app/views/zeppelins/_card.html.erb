@@ -1,13 +1,13 @@
+<%= link_to zeppelin_path(zeppelin), class: "card-link" do %>
 <div class="zeppelin-card">
-  <%= link_to zeppelin_path(zeppelin), class: "card-link" do %>
-  <div class="zeppelin-img"> 
+  <div class="zeppelin-img">
     <%= cl_image_tag zeppelin.photo.key, height: 200, crop: 'fit' if zeppelin.photo.attached? %>
-   </div>
+  </div>
   <div class="zeppelin-info">
     <div class="zeppelin-name"><%= zeppelin.name %></div>
     <div class="zeppelin-price"><i class="material-icons"> euro_symbol </i><%= zeppelin.price %></div>
     <div class="description"> <%= zeppelin.description %> </div>
   </div>
-    <!--  <%= link_to "Book now", new_zeppelin_booking_path(zeppelin), class: 'btn btn-danger'  %> -->
-  </div>
+  <!--  <%= link_to "Book now", new_zeppelin_booking_path(zeppelin), class: 'btn btn-danger'  %> -->
+</div>
 <% end %>
