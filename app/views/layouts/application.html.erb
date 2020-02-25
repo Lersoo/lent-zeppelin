@@ -6,6 +6,7 @@
   <title>TODO</title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
+  <link rel="icon" href="<%= image_path('Logo-LentZep.png') %> " />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +18,9 @@
     <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "Logo-LentZep.png" %>
     <% end %>
-    <h2>Lent Zeppelin</h2>
+    <%= link_to "/" do %>
+    <h2 class="title">Lent Zeppelin</h2>
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
