@@ -1,1 +1,24 @@
-<h1>hello </h1>
+<div class="booking-content">
+    <div class="booking-header">
+        <h2>Booking n°<%= @booking.id %></h2>
+        <p><%= @booking.created_at.strftime("%d/%m/%Y")  %></p>
+    </div>
+    <div class="zeppelin-info">
+        <div class="zeppelin-info-text">
+            <h3>Zeppelin</h3>
+            <p><%= @booking.zeppelin.name %></p>
+            <p>Location: <%= @booking.zeppelin.location %></p>
+            <h3>Owner</h3>
+            <p>Name: <%= @booking.zeppelin.user.name %></p>
+            <p>Email: <%= @booking.zeppelin.user.email %></p>
+            <h3>Booking Date</h3>
+            <p><%= @booking.booking_date.strftime("%d/%m/%Y") %></p>
+            
+            <h3>Renter</h3>
+            <p>Name: <%= @booking.user.name %></p>
+            <p>Email: <%= @booking.user.email %></p>
+        </div>
+        <%= cl_image_tag '/assets/ballon.jpg', crop: :scale,class:'booking-img' %>
+    </div>
+</div>
+ 
