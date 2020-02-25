@@ -3,7 +3,6 @@ class ZeppelinsController < ApplicationController
 
   def index
     search_params
-    p params
     @zeppelins = Zeppelin.search(params[:search])
   end
 
@@ -29,11 +28,11 @@ class ZeppelinsController < ApplicationController
   end
   # setting strong params
   def zeppelin_params
-    params.require(:zeppelin).permit(:name, :location, :price, :start_date, :end_date)
+    params.require(:zeppelin).permit(:name, :location, :price, :start_date, :end_date, :photo)
   end
 
   def search_params
-    params.permit(:search, :location, :max_price, :date)
+    params.permit(:search, :location)
   end
 
 end
