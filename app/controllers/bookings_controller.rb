@@ -1,5 +1,10 @@
+require 'date'
+
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[destroy]
+
+  def show
+  end
 
   def new
     @zeppelin = Zeppelin.find(params[:zeppelin_id])
@@ -7,9 +12,16 @@ class BookingsController < ApplicationController
   end
 
   def create
+    p params[:booking]
     @booking = Booking.new(booking_params)
     @booking.zeppelin = Zeppelin.find(params[:zeppelin_id])
     @booking.user = current_user
+    @booking.total_price = 500
+    if @booking.save!
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -18,7 +30,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:name, :description, :location, :price, :start_date, :end_date)
+    params.require(:booking).permit(:zeppelin_id, :user_id, :booking_date)
   end
 
   def set_booking

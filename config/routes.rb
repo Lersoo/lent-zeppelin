@@ -11,16 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # get 'bookings/new'
-  # get 'bookings/create'
-  # get 'bookings/destroy'
-  # get 'zeppelins/index'
-  # get 'zeppelins/show'
-  # get 'zeppelins/new'
-  # get 'zeppelins/create'
-  # get 'users/show'
-  # get 'users/new'
-  # get 'users/create'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

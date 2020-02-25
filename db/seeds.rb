@@ -27,7 +27,6 @@ user_params = [{
   password_confirmation: 'tototo'
 }]
 
-
 zeppelin_params = [{ name: 'Led Zep',
 location: 'Lyon',
 price: 500,
