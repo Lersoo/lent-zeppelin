@@ -1,7 +1,7 @@
 @import "config/bootstrap_variables";
 
 $background-color: #e1f2fb;
-$text-color : #e9b2bc;
+$text-color : #2E3436FF;
 $border-color: #8bc4e0;
 .cards-container {
   display: flex;
@@ -9,14 +9,14 @@ $border-color: #8bc4e0;
   justify-content: space-between;
   .zeppelin-card {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    border: 0.2px solid $border-color;
-    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    // border: 0.2px solid $border-color;
     margin-bottom: 20px;
     border-radius: 15px;
     transition: 0.3s ease;
     padding: $padding;
-    background-color: $background-color;
+    // background-color: $background-color;
     color: $text-color;
     margin: $margin;
     width: 300px;
@@ -24,13 +24,16 @@ $border-color: #8bc4e0;
       transform: scale(1.05);
       background-color: $text-color;
       color: $background-color;
+      box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
     }
-
+    .zeppelin-img {
+      min-height: 100px;
+    }
     .zeppelin-info {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: flex-end;
     }
+
   }
 }

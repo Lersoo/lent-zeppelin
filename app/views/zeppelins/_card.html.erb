@@ -1,10 +1,11 @@
 <div class="zeppelin-card">
-  <div class="zeppelin-img">
+  <div class="zeppelin-img" style="background-image: url(<%= cl_image_path zeppelin.photo.key, crop: :fill if zeppelin.photo.attached? %>")>
   </div>
   <div class="zeppelin-info">
-    <h4><%= zeppelin.name %></h4>
-    <p><%= zeppelin.description %></p>
-    <p><%= zeppelin.price %></p>
-    <%= link_to "Book now", new_zeppelin_booking_path(zeppelin), class: 'btn btn-danger'  %>
+    <div class="zeppelin-name"><%= zeppelin.name %></div>
+    <div class="zeppelin-price"><i class="material-icons"> euro_symbol </i><%= zeppelin.price %></div>
+    <div class="description"> <%= zeppelin.description %> </div>
   </div>
+  <!--  <%= link_to "Book now", new_zeppelin_booking_path(zeppelin), class: 'btn btn-danger'  %> -->
+</div>
 </div>
