@@ -5,9 +5,9 @@
   <p>photo du zep</p>
   <div class="informations">
     <div class="text-infos">
-    <p><%= @zeppelin.name %></p>
-    <p><%= @zeppelin.location %></p>
-    <p><%= @zeppelin.price %></p>
+    <p>Zeppelin name : <%= @zeppelin.name %></p>
+    <p>Zeppelin location : <%= @zeppelin.location %></p>
+    <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
     <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
       <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
     <% else %>
