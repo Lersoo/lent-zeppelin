@@ -1,8 +1,9 @@
 <div class="container">
+  <div class="zeppelin-photo" style="background-image: url(<%= cl_image_path @article.photo.key, height: 300, width: 400, crop: :fill if @article.photo.attached? %> );">
   <h1>
     <%= @zeppelin.name %>
   </h1>
-  <p>photo du zep</p>
+  </div>
   <h2>Informations</h2>
   <div class="informations">
     <div class="text-infos">
