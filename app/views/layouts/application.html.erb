@@ -51,8 +51,7 @@
     <% end %>
     <%= yield %>
 
-    <hr>
-    <div class="footer">
+    <div class="footer fixed-bottom">
        <div class="footer-copyright">
         <%= image_tag "Logo-LentZep.png", height: 30%>
         © 2020 LentZeppelin, Inc. All rights reserved - Made with <i class="fas fa-heart"></i> by the Lent-Zeppelin Team.
@@ -64,9 +63,8 @@
       </div>
 
     </div>
-    
+
     <%= javascript_pack_tag "application" %>
   </body>
   </html>
-  
-  
+
