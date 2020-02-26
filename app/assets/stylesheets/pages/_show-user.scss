@@ -24,7 +24,7 @@ $border-color: #8bc4e0;
 .dash-info{
     padding-left: 50px;
     width: 100%;
-    
+
     h2{
         text-align: center;
         margin-top: 35px;
@@ -74,6 +74,90 @@ $border-color: #8bc4e0;
         color: #fff;
       }
 }
+// TEST CODE
+.page {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 50px;
+  text-align: center;
+}
 
+.booking {
+  margin-bottom: 80px;
+  text-align: center;
+}
 
+.book-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.zeppelins {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px;
+}
+
+.zeppelin-card {
+  margin: 15px;
+}
+
+.left-board {
+  width: 300px;
+}
+
+.right-board {
+  width: 300px;
+}
+
+// CARD UIKITT
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  width: 400px;
+}
+
+.card-product .image {
+  height: 100%;
+  width: 120px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product-infos {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

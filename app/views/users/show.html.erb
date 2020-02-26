@@ -42,3 +42,30 @@
   </div>
 
 </div>
+<!-- TEST CODE -->
+<div class="page">
+  <div class="left-board">
+    <p>add booking</p>
+  </div>
+  <div class="middle-board">
+    <div class="booking">
+      <p>my bookings</p>
+      <hr>
+      <div class="book-cards">
+        <% @user.bookings.each do |booking| %>
+          <%= render 'bookings/card', booking: booking %>
+          <% end %>
+      </div>
+    </div>
+    <p>my zeppelins</p>
+    <hr>
+    <div class="zeppelins">
+      <% @user.zeppelins.each do |zeppelin| %>
+        <%= render 'zeppelins/card', zeppelin: zeppelin %>
+        <% end %>
+    </div>
+  </div>
+  <div class="right-board">
+    <p>add zeppelin</p>
+  </div>
+</div>
