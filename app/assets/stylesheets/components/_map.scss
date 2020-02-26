@@ -1,3 +1,28 @@
 .map {
   color: $red;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 !important;
+  color: #fff;
+
+  h2{
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  p{
+    font-size: 20px;
+  }
+
+}
+
+.popup{
+  background-size: cover;
+}
