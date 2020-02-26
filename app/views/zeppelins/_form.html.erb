@@ -1,6 +1,6 @@
 <%= simple_form_for @zeppelin do |f| %>
   <%= f.input :name %>
-  <%= f.input :location %>
+  <%= f.input :location, input_html: { class: "search" } %>
   <%= f.input :price %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>

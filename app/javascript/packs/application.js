@@ -3,5 +3,5 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
-import { placesAutocomplete } from './autocomplete';
-searchAlgoliaPlaces();
+import { addAutocomplete } from './autocomplete';
+addAutocomplete();
