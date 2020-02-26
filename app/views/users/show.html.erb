@@ -14,22 +14,16 @@
     <h2>My Bookings</h2>
     <div class="dash-booking">
       <% @user.bookings.each do |booking| %>
-      <%= link_to booking_path(booking) do %>
-      <div class="card">
-        <h3><%= booking.zeppelin.name %></h3>
-        <div class="card-foot">
-          <p><%= booking.booking_date %></p>
-          <p><%= booking.total_price %>€</p>
-        </div>
-      </div>
-      <% end %>
+      <%= render 'bookings/card', booking: booking %>
       <% end %>
     </div>
     <h2>My zeppelin</h2>
     <div class="dash-booking">
-      <%= render 'zeppelins/list', zeppelins: @user.zeppelins %>
+      <% @user.zeppelins.each do |zeppelin| %>
+      <%= render 'zeppelins/card', zeppelin: zeppelin %>
+      <% end %>
       <%= link_to new_zeppelin_path do %>
-      <div class="zeppelin-add card">
+      <div class="zeppelin-add">
         <h3>Add a zeppelin</h3>
         <span>+</span>
       </div>
