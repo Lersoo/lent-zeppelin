@@ -16,7 +16,7 @@
 
             <h3>Renter</h3>
             <p>Name: <%= @booking.user.name %></p>
-            <p>Send an e-mail: <%= email_to @booking.user.email %></p>
+            <p>Send an e-mail: <%= mail_to @booking.user.email %></p>
         </div>
         <%= cl_image_tag @booking.zeppelin.photo.key, crop: :scale,class:'booking-img' if @booking.zeppelin.photo.attached? %>
         <%= link_to 'Delete Booking', booking_path(@booking),
