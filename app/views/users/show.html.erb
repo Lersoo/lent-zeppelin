@@ -12,11 +12,21 @@
   </div>
   <div class="dash-info">
     <h2>My Bookings</h2>
-    <div class="dash-booking">
-      <% @user.bookings.each do |booking| %>
-      <%= render 'bookings/card', booking: booking %>
-      <% end %>
-    </div>
+    <% if @user.bookings[0] %>
+      <div class="dash-booking">
+        <% @user.bookings.each do |booking| %>
+        <%= render 'bookings/card', booking: booking %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="dash-booking">
+        <%= link_to zeppelins_path do %>
+          <div class="zeppelin-add">
+            <h3>New Booking</h3>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
     <h2>My zeppelin</h2>
     <div class="dash-booking">
       <% @user.zeppelins.each do |zeppelin| %>
