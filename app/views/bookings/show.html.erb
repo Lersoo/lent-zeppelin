@@ -19,5 +19,8 @@
             <p>Send an e-mail: <%= email_to @booking.user.email %></p>
         </div>
         <%= cl_image_tag @booking.zeppelin.photo.key, crop: :scale,class:'booking-img' if @booking.zeppelin.photo.attached? %>
+        <%= link_to 'Delete Booking', booking_path(@booking),
+         method: :delete,
+        data: { confirm: "Are you sure?" },class:'delete-booking'  %>
     </div>
 </div>
