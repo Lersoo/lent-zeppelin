@@ -1,7 +1,7 @@
 <div class="banner">
   <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
   <div class="form-group">
-    <%= f.text_field :location, class:'form-control input', id:'search', placeholder:'Search by location' %>
+    <%= f.text_field :location, class:'form-control input search', placeholder:'Search by location' %>
     <%= f.submit 'Search', class:' btn btn-primary input'%>
   </div>
   <% end %>
