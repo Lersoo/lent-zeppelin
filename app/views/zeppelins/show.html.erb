@@ -40,9 +40,6 @@
           <%= simple_form_for [@zeppelin, @booking] do |f| %>
           <%= f.input :booking_date %>
           <p>Your total will be : €<%= @zeppelin.price %> </p>
-          <% if @booking.errors %>
-          <%= @booking.errors.messages %>
-          <% end %>
 
         </div>
         <div class="modal-footer">
