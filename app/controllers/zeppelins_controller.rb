@@ -7,7 +7,7 @@ class ZeppelinsController < ApplicationController
   end
 
   def show
-    @zeppelin
+    @booking = Booking.new
   end
 
   def new
