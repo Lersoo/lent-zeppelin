@@ -12,18 +12,23 @@
   </div>
 
   <div class="navbar-group links">
-    <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
-    <div class="search-form">
-      <%= f.text_field :location, class:'form-control input', id:'search', placeholder:'Search' %>
-      <%= button_tag(class:' btn btn-primary input') do %>
-      <i class="material-icons"> search </i>
-      <% end %>
+    <div class="dropdown">
+      <i class="material-icons dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> search </i>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
+        <div class="search-form">
+          <%= f.text_field :location, class:'form-control input', id:'search', placeholder:'Search' %>
+          <%= button_tag(class:'btn btn-primary input') do %>
+          <i class="material-icons"> search </i>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
     </div>
-    <% end %>
 
     <div class="dropdown">
       <i class="material-icons dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> perm_identity </i>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
         <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
         <%= link_to "Inscription", new_user_registration_path, class: "nav-link" %>
       </div>
