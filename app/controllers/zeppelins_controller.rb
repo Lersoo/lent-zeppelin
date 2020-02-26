@@ -2,12 +2,11 @@ class ZeppelinsController < ApplicationController
   before_action :set_zeppelin, only: %i[show]
 
   def index
-    search_params
     @zeppelins = Zeppelin.search(params[:search])
   end
 
   def show
-    @zeppelin
+    @booking = Booking.new
     @markers = [{
                 lat: @zeppelin.latitude,
                 lng: @zeppelin.longitude
@@ -36,7 +35,7 @@ class ZeppelinsController < ApplicationController
   end
 
   def search_params
-    params.permit(:search, :location)
+    params.permit(:location)
   end
 
 end
