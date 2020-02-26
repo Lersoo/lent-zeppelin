@@ -3,24 +3,24 @@
   <%= @zeppelin.name %>
 </h1>
 </div>
-<div class="container" id="zep-cont">
-  <h2>Informations</h2>
-  <div class="informations">
-    <div class="text-infos">
-    <p>Zeppelin name : <%= @zeppelin.name %></p>
-    <p>Zeppelin location : <%= @zeppelin.location %></p>
-    <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
-    <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
-      <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
-    <% else %>
-      <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
-    <% end %>
-    </div>
-    <div class="map">
-      <p>map?</p>
-    </div>
+<div class="show-zeppelin">
+  <div class="zep-cont">
+    <h2>Informations</h2>
+      <div class="text-infos">
+        <p>Zeppelin name : <%= @zeppelin.name %></p>
+        <p>Zeppelin location : <%= @zeppelin.location %></p>
+        <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
+        <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
+          <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+        <% else %>
+          <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+        <% end %>
+      </div>
+      <%= link_to "Book now", new_zeppelin_booking_path(@zeppelin), class: 'btn btn-primary book-button'  %>
   </div>
-  <div class="book-button">
-    <%= link_to "Book now", new_zeppelin_booking_path(@zeppelin), class: 'btn btn-primary'  %>
-  </div>
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 </div>
