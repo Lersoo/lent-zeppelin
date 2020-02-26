@@ -10,15 +10,14 @@
             <p>Location: <%= @booking.zeppelin.location %></p>
             <h3>Owner</h3>
             <p>Name: <%= @booking.zeppelin.user.name %></p>
-            <p>Email: <%= @booking.zeppelin.user.email %></p>
+            <p>Email: <%= mail_to @booking.zeppelin.user.email %></p>
             <h3>Booking Date</h3>
             <p><%= @booking.booking_date.strftime("%d/%m/%Y") %></p>
-            
+
             <h3>Renter</h3>
             <p>Name: <%= @booking.user.name %></p>
-            <p>Email: <%= @booking.user.email %></p>
+            <p>Send an e-mail: <%= email_to @booking.user.email %></p>
         </div>
         <%= cl_image_tag @booking.zeppelin.photo.key, crop: :scale,class:'booking-img' if @booking.zeppelin.photo.attached? %>
     </div>
 </div>
- 
