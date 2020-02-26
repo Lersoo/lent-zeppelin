@@ -14,3 +14,20 @@
 .navbar-lewagon h2 {
   text-align: left;
 }
+
+@media (max-width: 840px){
+  .navbar .input{
+    display: none;
+  }
+}
+
+.navbar .form-group{
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .input{
+  margin-right: 8px;
+}
