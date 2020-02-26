@@ -15,78 +15,16 @@
 </head>
 <body>
   <% if user_signed_in? %>
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "Logo-LentZep.png" %>
-    <% end %>
-    <%= link_to "/" do %>
-    <h2 class="title">Lent Zeppelin</h2>
-    <% end %>
-      <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
-        <div class="form-group">
-          <%= f.text_field :location, class:'form-control input', id:'search', placeholder:'Search' %>
-          <%= f.submit 'Search', class:' btn btn-primary input'%>
-        </div>
-      <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Déconnexion", destroy_user_session_path, class: "nav-link", method: :delete, data: { confirm: 'Are you sure?' }%>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Profil", profile_users_path, class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
-</div>
-</div>
-<% else %>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
-  <%= image_tag "Logo-LentZep.png" %>
+    <%= render 'layouts/signed-in-navbar' %>
+  <% else %>
+    <%= render 'layouts/not-signed-in-navbar' %>
   <% end %>
-   <%= link_to "/" do %>
-    <h2 class="title">Lent Zeppelin</h2>
-    <% end %>
-    <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
-      <div class="form-group">
-        <%= f.text_field :location, class:'form-control input', id:'search', placeholder:'Search' %>
-        <%= f.submit 'Search', class:' btn btn-primary input'%>
-      </div>
-    <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Inscription", new_user_registration_path, class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
-</div>
 
-<% end %>
+  <%= yield %>
 
-<%= yield %>
+  <%= render 'layouts/footer' %>
 
-<div class="footer fixed-bottom">
- <div class="footer-copyright">
-  <%= image_tag "Logo-LentZep.png", height: 30%>
-  © 2020 LentZeppelin, Inc. All rights reserved - Made with <i class="fas fa-heart"></i> by the Lent-Zeppelin Team.
-</div>
-<div class="footer-links">
-  <a href="#"><i class="fab fa-instagram"></i></a>
-  <a href="#"><i class="fab fa-facebook"></i></a>
-  <a href="#"><i class="fab fa-twitter"></i></a>
-</div>
-<%= javascript_pack_tag "application" %>
+  <%= javascript_pack_tag "application" %>
 </body>
 </html>
 
