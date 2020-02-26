@@ -4,52 +4,52 @@ $background-color: #e1f2fb;
 $text-color : #2E3436FF;
 $border-color: #8bc4e0;
 
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  .card-link {
-    text-decoration: none;
-    color: $text-color!important;
-    &:hover {
-      color: $background-color!important;
-    }
+.zepp-card-link {
+  text-decoration: none;
+  color: $text-color!important;
+  &:hover {
+    color: $background-color!important;
   }
-  .zeppelin-card {
+}
+.zeppelin-card {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  background-color: #f0f0f0;
+  width: 300px;
+  
+  &:hover {
+    transform: scale(1.05);
+    background-color: $text-color;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+  }
+  .zeppelin-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 15px 0 0;
+  }
+  .zeppelin-info {
+    padding: $padding;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    transition: 0.3s ease;
-
-    margin: $margin;
-    width: 300px;
-    &:hover {
-      transform: scale(1.05);
-      background-color: $text-color;
-      box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    .zeppelin-name {
+      text-align: center;
     }
-    .zeppelin-img {
-      width: 100%;
-      img {
-        object-fit: cover;
-        object-position: 50% 50%;
-      }
-    }
-    .zeppelin-info {
-      padding: $padding;
+    .zeppelin-price {
       display: flex;
-      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .zeppelin-footer{
+      display:  flex;
       justify-content: space-between;
-      .zeppelin-name {
-        text-align: center;
-      }
-      .zeppelin-price {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-      }
+
     }
   }
 }

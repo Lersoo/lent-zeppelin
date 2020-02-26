@@ -1,7 +1,6 @@
-<%= link_to zeppelin_path(zeppelin), class: "card-link" do %>
+<%= link_to zeppelin_path(zeppelin), class: "zep-card-link" do %>
 <div class="zeppelin-card">
-  <div class="zeppelin-img">
-    <%= cl_image_tag zeppelin.photo.key, height: 200, crop: 'fit' if zeppelin.photo.attached? %>
+  <div class="zeppelin-img" style="background-image: url(<%= cl_image_path zeppelin.photo.key if zeppelin.photo.attached?%>);">
   </div>
   <div class="zeppelin-info">
     <div class="zeppelin-name"><%= zeppelin.name %></div>
