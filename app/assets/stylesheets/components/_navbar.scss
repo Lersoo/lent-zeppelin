@@ -33,13 +33,6 @@
     &:hover {
       cursor: pointer;
       opacity: 1;
-      &:hover {
-      }
-    }
-
-    .search-form {
-      display: flex;
-      align-items: center;
     }
   }
 
@@ -54,4 +47,10 @@
 
   .title h2 {
     text-align: center;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    width: 400px;
   }
