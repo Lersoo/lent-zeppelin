@@ -7,6 +7,10 @@ class ZeppelinsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @markers = [{
+                lat: @zeppelin.latitude,
+                lng: @zeppelin.longitude
+               }]
   end
 
   def new
