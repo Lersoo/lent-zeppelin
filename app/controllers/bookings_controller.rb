@@ -16,7 +16,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    p params[:booking]
     @booking = Booking.new(booking_params)
     @booking.zeppelin = Zeppelin.find(params[:zeppelin_id])
     @booking.user = current_user
@@ -24,7 +23,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      @booking.errors.add(:name, "Invalid date")
     end
   end
 

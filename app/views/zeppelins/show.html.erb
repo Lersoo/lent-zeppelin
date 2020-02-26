@@ -22,10 +22,11 @@
   </div>
 
   <!-- Button trigger modal -->
+  <% if user_signed_in? %>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Book now
   </button>
-
+  <% end %>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -38,9 +39,9 @@
         </div>
         <div class="modal-body">
           <%= simple_form_for [@zeppelin, @booking] do |f| %>
+          <%= f.error_notification %>
           <%= f.input :booking_date %>
           <p>Your total will be : €<%= @zeppelin.price %> </p>
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
