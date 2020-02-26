@@ -10,7 +10,8 @@ class ZeppelinsController < ApplicationController
     @zeppelin
     @markers = [{
                 lat: @zeppelin.latitude,
-                lng: @zeppelin.longitude
+                lng: @zeppelin.longitude,
+                infoWindow: render_to_string(partial: "info_window", locals: { zeppelin: @zeppelin })
                }]
   end
 
