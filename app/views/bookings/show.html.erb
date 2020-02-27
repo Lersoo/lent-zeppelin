@@ -14,7 +14,8 @@
             <p>Email: <%= mail_to @booking.zeppelin.user.email %></p>
             <h3>Booking Date</h3>
             <p><%= @booking.booking_date.strftime("%d/%m/%Y") %></p>
-
+            <h3>Booking Price</h3>
+            <p><%= @booking.total_price%>€</p>
             <h3>Renter</h3>
             <p>Name: <%= @booking.user.name %></p>
             <p>Send an e-mail: <%= mail_to @booking.user.email %></p>
