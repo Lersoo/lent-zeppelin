@@ -16,6 +16,8 @@ class ZeppelinsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @zeppelin_bookings = []
+    Booking.where(:zeppelin_id == @zeppelin).each { |booking| @zeppelin_bookings << booking.booking_date }
     @markers = [{
                 lat: @zeppelin.latitude,
                 lng: @zeppelin.longitude,
