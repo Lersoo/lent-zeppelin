@@ -3,6 +3,14 @@ class ZeppelinsController < ApplicationController
 
   def index
     @zeppelins = Zeppelin.search(params[:search])
+    @markers = @zeppelins.map do |zeppelin|
+      {
+        lat: zeppelin.latitude,
+        lng: zeppelin.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { zeppelin: zeppelin })
+
+      }
+    end
   end
 
   def show
