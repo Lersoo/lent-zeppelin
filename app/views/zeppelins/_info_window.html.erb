@@ -1,13 +1,13 @@
 <div class="popup" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path zeppelin.photo.key if zeppelin.photo.attached? %> );">
-    <h2><%= zeppelin.name %></h2>
-    <p><%= zeppelin.price %>€</p>
-    <% if current_page?(zeppelin_path(zeppelin)) %>
-        <% if user_signed_in? %>
-        <button type="button" class="btn btn-primary book-button" data-toggle="modal" data-target="#exampleModal">
-        Book now
-        </button>
-        <% end %>
-    <% else %>
-        <%= link_to 'More info', zeppelin_path(zeppelin), class: 'btn btn-primary book-button' %>
-    <% end %>
+  <h2><%= zeppelin.name %></h2>
+  <p><%= zeppelin.price %>€</p>
+  <% if current_page?(zeppelin_path(zeppelin)) %>
+  <% if user_signed_in? %>
+  <button type="button" class="btn btn-primary book-button" data-toggle="modal" data-target="#exampleModal">
+    Book now
+  </button>
+  <% end %>
+  <% else %>
+  <%= link_to 'More info', zeppelin_path(zeppelin), class: 'btn btn-primary book-button' %>
+  <% end %>
 </div>

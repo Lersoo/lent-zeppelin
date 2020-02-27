@@ -15,7 +15,7 @@
         <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
         <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
         <% else %>
-        <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+        <p>Book this zeppelin between <strong> <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %></strong> and the <strong><%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></strong></p>
         <% end %>
       </div>
       <!-- Button trigger modal -->
@@ -60,6 +60,5 @@
 
     </div>
   </div>
-</div>
 </div>
 
