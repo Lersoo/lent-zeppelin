@@ -1,84 +1,11 @@
 $background-color: #e1f2fb;
 $text-color : #2E3436FF;
 $border-color: #8bc4e0;
-
-.dashboard{
-    display: flex;
-    min-height: 90vh;
-}
-
-.side-bar{
-    background-color: #fff;
-    width: 20%;
-    text-align: center;
-    overflow-wrap: break-word;
-    border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
-    padding: 5px;
-
-
-    .user-name{
-        margin: 50px 0;
-    }
-}
-
-.dash-info{
-    padding-left: 50px;
-    width: 100%;
-
-    h2{
-        text-align: center;
-        margin-top: 35px;
-    }
-
-    a{
-        text-decoration: none;
-    }
-}
-
-@media (max-width: 950px){
-    .dash-booking{
-        justify-content: center !important;
-    }
-}
-
-.dash-booking{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    .zeppelin-card{
-        margin-right: 50px;
-    }
-}
-.zeppelin-add {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 280px;
-    width: 300px;
-    background-color: #fff;
-    border-radius: 25px;
-    margin-top: 50px;
-    color: rgba($color: #000000, $alpha: 0.3);
-    transition: 0.3s ease;
-    margin-right: 50px;
-
-    span {
-        font-size: 50px;
-    }
-    &:hover {
-        transform: scale(1.05);
-        background-color: $text-color;
-        box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
-        color: #fff;
-      }
-}
 // TEST CODE
 .page {
   display: flex;
   justify-content: space-between;
-  margin: 80px 50px;
+  margin: 80px 40px;
   text-align: center;
 }
 
@@ -105,10 +32,32 @@ $border-color: #8bc4e0;
 
 .left-board {
   width: 300px;
+  border-right: 1px solid black;
+  padding: 0 10px;
+  .action-button {
+    position: sticky;
+    top: 20px;
+    h4 {
+    font-size: 23px;
+    }
+  }
+}
+
+.button-white {
+  background-color: white;
 }
 
 .right-board {
   width: 300px;
+  border-left: 1px solid black;
+  padding: 0 10px;
+  .action-button {
+    position: sticky;
+    top: 20px;
+    h4 {
+    font-size: 23px;
+    }
+  }
 }
 
 // CARD UIKITT
@@ -160,4 +109,21 @@ $border-color: #8bc4e0;
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.book-card-link {
+  color: black;
+  &:hover {
+  text-decoration: none;
+  }
+}
+
+.card-product {
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+    background-color: $text-color;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    color: $background-color;
+  }
 }
