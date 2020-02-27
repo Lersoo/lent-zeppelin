@@ -3,30 +3,36 @@
     <%= @zeppelin.name %>
   </h1>
 </div>
-<div class="container" id="zep-cont">
-  <h2>Informations</h2>
-  <div class="informations">
-    <div class="text-infos">
-      <p>Zeppelin name : <%= @zeppelin.name %></p>
-      <p>Zeppelin location : <%= @zeppelin.location %></p>
-      <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
-      <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
-      <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
-      <% else %>
-      <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
-      <% end %>
+
+  <div class="show-zeppelin">
+    <div class="zep-cont"> 
+      <h2>Informations</h2>
+      <div class="informations">
+        <div class="text-infos">
+          <p>Zeppelin name : <%= @zeppelin.name %></p>
+          <p>Zeppelin location : <%= @zeppelin.location %></p>
+          <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
+          <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
+          <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+          <% else %>
+          <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+          <% end %>
+        </div>
+        <!-- Button trigger modal -->
+        <% if user_signed_in? %>
+        <button type="button" class="btn btn-primary book-button" data-toggle="modal" data-target="#exampleModal">
+          Book now
+        </button>
+        <% end %>
+      </div>
     </div>
-    <div class="map">
-      <p>map?</p>
-    </div>
+    <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
   </div>
 
-  <!-- Button trigger modal -->
-  <% if user_signed_in? %>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Book now
-  </button>
-  <% end %>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -52,12 +58,9 @@
           <%= f.submit 'Book now', class: 'btn btn-primary' %>
           <% end %>
         </div>
+
       </div>
     </div>
   </div>
-  <div
-    id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
 </div>
+

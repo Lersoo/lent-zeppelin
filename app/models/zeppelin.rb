@@ -13,7 +13,7 @@ class Zeppelin < ApplicationRecord
 
   def self.search(search)
     if search
-      Zeppelin.near(search[:location].downcase, 20)
+      Zeppelin.near(search[:location], 30)
     else
       Zeppelin.all
     end
