@@ -1,13 +1,11 @@
-.informations {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
 
 .text-infos {
   background-color: white;
   padding: 16px;
+  
+}
+.book-button {
+  margin: 10px 0;
 }
 
 .zeppelin-photo {
@@ -17,6 +15,7 @@
   height: 300px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   color: white;
 
   h1 {
@@ -25,6 +24,21 @@
   }
 }
 
-#zep-cont {
-  margin-top: 16px;
+.show-zeppelin{
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 25px;
+
+  #map{
+    margin-top: 20px;
+    min-width: 50vw;
+    min-height: 50vh;
+  }
+}
+
+.zep-cont{
+  padding: 0 20px;
 }

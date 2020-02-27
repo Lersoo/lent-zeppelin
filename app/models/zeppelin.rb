@@ -8,9 +8,12 @@ class Zeppelin < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   def self.search(search)
     if search
-      Zeppelin.where('lower(location) LIKE ?', search[:location].downcase)
+      Zeppelin.near(search[:location], 30)
     else
       Zeppelin.all
     end

@@ -4,10 +4,6 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[destroy show]
 
   def show
-    
-  end
-
-  def show
   end
 
   def new
@@ -16,15 +12,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    p params[:booking]
     @booking = Booking.new(booking_params)
     @booking.zeppelin = Zeppelin.find(params[:zeppelin_id])
     @booking.user = current_user
     @booking.total_price = 500
-    if @booking.save!
+    if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new
     end
   end
 

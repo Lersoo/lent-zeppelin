@@ -1,26 +1,60 @@
 <div class="zeppelin-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @zeppelin.photo.key, crop: :fill if @zeppelin.photo.attached? %> );">
-<h1>
-  <%= @zeppelin.name %>
-</h1>
+  <h1>
+    <%= @zeppelin.name %>
+  </h1>
 </div>
-<div class="container" id="zep-cont">
-  <h2>Informations</h2>
-  <div class="informations">
-    <div class="text-infos">
-    <p>Zeppelin name : <%= @zeppelin.name %></p>
-    <p>Zeppelin location : <%= @zeppelin.location %></p>
-    <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
-    <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
-      <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
-    <% else %>
-      <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
-    <% end %>
+
+  <div class="show-zeppelin">
+    <div class="zep-cont"> 
+      <h2>Informations</h2>
+      <div class="informations">
+        <div class="text-infos">
+          <p>Zeppelin name : <%= @zeppelin.name %></p>
+          <p>Zeppelin location : <%= @zeppelin.location %></p>
+          <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
+          <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
+          <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+          <% else %>
+          <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+          <% end %>
+        </div>
+        <!-- Button trigger modal -->
+        <% if user_signed_in? %>
+        <button type="button" class="btn btn-primary book-button" data-toggle="modal" data-target="#exampleModal">
+          Book now
+        </button>
+        <% end %>
+      </div>
     </div>
-    <div class="map">
-      <p>map?</p>
+    <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book <%= @zeppelin.name %> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@zeppelin, @booking] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :booking_date %>
+        <p>Your total will be : €<%= @zeppelin.price %> </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit 'Book now', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="book-button">
-    <%= link_to "Book now", new_zeppelin_booking_path(@zeppelin), class: 'btn btn-primary'  %>
-  </div>
 </div>
+

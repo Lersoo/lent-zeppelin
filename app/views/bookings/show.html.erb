@@ -5,6 +5,7 @@
     </div>
     <div class="zeppelin-info">
         <div class="zeppelin-info-text">
+          <% if @booking.user == current_user || @booking.zeppelin.user == current_user %>
             <h3>Zeppelin</h3>
             <p><%= @booking.zeppelin.name %></p>
             <p>Location: <%= @booking.zeppelin.location %></p>
@@ -22,5 +23,8 @@
         <%= link_to 'Delete Booking', booking_path(@booking),
          method: :delete,
         data: { confirm: "Are you sure?" },class:'delete-booking'  %>
+        <% else %>
+        <p>Sorry, you are not the owner or the renter.</p>
+        <% end %>
     </div>
 </div>
