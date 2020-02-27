@@ -4,63 +4,62 @@
   </h1>
 </div>
 
-  <div class="show-zeppelin">
-    <div class="zep-cont"> 
-      <h2>Informations</h2>
-      <div class="informations">
-        <div class="text-infos">
-          <p>Zeppelin name : <%= @zeppelin.name %></p>
-          <p>Zeppelin location : <%= @zeppelin.location %></p>
-          <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
-          <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
-          <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
-          <% else %>
-          <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
-          <% end %>
-        </div>
-        <!-- Button trigger modal -->
-        <% if user_signed_in? %>
-        <button type="button" class="btn btn-primary book-button" data-toggle="modal" data-target="#exampleModal">
-          Book now
-        </button>
+<div class="show-zeppelin">
+  <div class="zep-cont">
+    <h2>Informations</h2>
+    <div class="informations">
+      <div class="text-infos">
+        <p>Zeppelin name : <%= @zeppelin.name %></p>
+        <p>Zeppelin location : <%= @zeppelin.location %></p>
+        <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
+        <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
+        <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+        <% else %>
+        <p>Book this zeppelin between <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
         <% end %>
       </div>
+      <!-- Button trigger modal -->
+      <% if user_signed_in? %>
+      <button type="button" class="btn btn-primary book-button" data-toggle="modal" data-target="#exampleModal">
+        Book now
+      </button>
+      <% end %>
     </div>
-    <div
-      id="map"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
   </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Book <%= @zeppelin.name %> </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for [@zeppelin, @booking] do |f| %>
-          <%= f.error_notification %>
-          <%#= hidden_field_tag 'minDate', @zeppelin.start_date %>
-          <%#= hidden_field_tag 'maxDate', @zeppelin.end_date %>
-          <%#= hidden_field_tag 'alreadyBooked', @zeppelin_bookings %>
-
-          <input type="text" id="datePicker" placeholder="Select your booking date" name="booking[booking_date]" data-input data-minDate="<%= @zeppelin.start_date %>" data-maxDate="<%= @zeppelin.end_date %>" data-bookingsDate="<%= @zeppelin_bookings.to_json %>">
-          <p>Your total will be : €<%= @zeppelin.price %> </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= f.submit 'Book now', class: 'btn btn-primary' %>
-          <% end %>
-        </div>
-
+  <div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book <%= @zeppelin.name %> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+        <%= simple_form_for [@zeppelin, @booking] do |f| %>
+        <%= f.error_notification %>
+        <%#= hidden_field_tag 'minDate', @zeppelin.start_date %>
+        <%#= hidden_field_tag 'maxDate', @zeppelin.end_date %>
+        <%#= hidden_field_tag 'alreadyBooked', @zeppelin_bookings %>
+
+        <input type="text" id="datePicker" placeholder="Select your booking date" name="booking[booking_date]" data-input data-minDate="<%= @zeppelin.start_date %>" data-maxDate="<%= @zeppelin.end_date %>" data-bookingsDate="<%= @zeppelin_bookings.to_json %>">
+        <p>Your total will be : €<%= @zeppelin.price %> </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit 'Book now', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+
     </div>
   </div>
+</div>
 </div>
 
