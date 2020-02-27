@@ -40,7 +40,11 @@
         <div class="modal-body">
           <%= simple_form_for [@zeppelin, @booking] do |f| %>
           <%= f.error_notification %>
-          <%= f.input :booking_date %>
+          <%#= hidden_field_tag 'minDate', @zeppelin.start_date %>
+          <%#= hidden_field_tag 'maxDate', @zeppelin.end_date %>
+          <%#= hidden_field_tag 'alreadyBooked', @zeppelin_bookings %>
+
+          <input type="text" id="datePicker" placeholder="Select your booking date" name="booking[booking_date]" data-input data-minDate="<%= @zeppelin.start_date %>" data-maxDate="<%= @zeppelin.end_date %>" data-bookingsDate="<%= @zeppelin_bookings.to_json %>">
           <p>Your total will be : €<%= @zeppelin.price %> </p>
         </div>
         <div class="modal-footer">
