@@ -7,7 +7,8 @@ class ZeppelinsController < ApplicationController
       {
         lat: zeppelin.latitude,
         lng: zeppelin.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { zeppelin: zeppelin })
+        infoWindow: render_to_string(partial: "info_window", locals: { zeppelin: zeppelin }),
+        image_url: helpers.asset_url('Zep.svg')
 
       }
     end
@@ -18,7 +19,8 @@ class ZeppelinsController < ApplicationController
     @markers = [{
                 lat: @zeppelin.latitude,
                 lng: @zeppelin.longitude,
-                infoWindow: render_to_string(partial: "info_window", locals: { zeppelin: @zeppelin })
+                infoWindow: render_to_string(partial: "info_window", locals: { zeppelin: @zeppelin }),
+                image_url: helpers.asset_url('Zep.svg')
                }]
   end
 
