@@ -1,44 +1,35 @@
-<div class="dashboard">
-  <div class="side-bar">
-    <h2>My profile</h2>
-    <div class="user-name">
-      <h3>Name</h3>
-      <p><%=@user.name%></p>
+<!-- TEST CODE -->
+<div class="page">
+  <div class="left-board">
+    <div class="action-button">
+    <h4><%= link_to "Add booking", zeppelins_path %></h4>
     </div>
-    <div class="user-email">
-      <h3>Email</h3>
-      <p><%= @user.email %></p>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. In odit eum non, eveniet hic laborum! Commodi, dignissimos, harum. Voluptate fuga nobis pariatur, expedita atque ipsa repudiandae consequatur debitis aperiam exercitationem.
     </div>
   </div>
-  <div class="dash-info">
-    <h2>My Bookings</h2>
-    <% if @user.bookings[0] %>
-      <div class="dash-booking">
+  <div class="middle-board">
+    <div class="booking">
+      <h3>My bookings</h3>
+      <div class="book-cards">
         <% @user.bookings.each do |booking| %>
-        <%= render 'bookings/card', booking: booking %>
-        <% end %>
+          <%= render 'bookings/card', booking: booking %>
+          <% end %>
       </div>
-    <% else %>
-      <div class="dash-booking">
-        <%= link_to zeppelins_path do %>
-          <div class="zeppelin-add">
-            <h3>New Booking</h3>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-    <h2>My zeppelin</h2>
-    <div class="dash-booking">
+    </div>
+    <h3>My zeppelins</h3>
+    <div class="zeppelins">
       <% @user.zeppelins.each do |zeppelin| %>
-      <%= render 'zeppelins/card', zeppelin: zeppelin %>
-      <% end %>
-      <%= link_to new_zeppelin_path do %>
-      <div class="zeppelin-add">
-        <h3>Add a zeppelin</h3>
-        <span>+</span>
-      </div>
-    <% end %>
+        <%= render 'zeppelins/card', zeppelin: zeppelin %>
+        <% end %>
     </div>
   </div>
-
+  <div class="right-board">
+    <div class="action-button">
+    <h4><%= link_to "Add zeppelin", new_zeppelin_path %></h4>
+    </div>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi ea quas, consequatur accusantium repudiandae nisi minus suscipit nobis eos, provident itaque asperiores veritatis, distinctio qui nesciunt magnam et cupiditate?
+    </div>
+  </div>
 </div>
