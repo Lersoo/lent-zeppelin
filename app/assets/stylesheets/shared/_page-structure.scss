@@ -4,3 +4,26 @@ body {
   background-color: rgb(30, 30, 30);
   color: #fff3c4;
 }
+
+.btn-danger {
+  background-color: #ef2c17;
+  color: #fff3c4;
+}
+
+.btn-danger:hover {
+  background-color: #ef2c17;
+  color: #fff3c4;
+}
+.dropdown .dropdown-menu {
+  background-color: black;
+  border: 1px solid #ef2c17;
+  color: #fff3c4;
+}
+body a {
+  color: #fff3c4;
+}
+
+body a:hover {
+  color: #ef2c17;
+  text-decoration: none;
+}

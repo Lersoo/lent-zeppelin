@@ -13,7 +13,7 @@
         <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
         <div class="search-form">
           <%= f.text_field :location, class:'form-control input search', id:'search', placeholder:'Search' %>
-          <%= button_tag(class:'btn btn-primary input') do %>
+          <%= button_tag(class:'btn btn-danger input') do %>
           <i class="material-icons"> search </i>
           <% end %>
         </div>
