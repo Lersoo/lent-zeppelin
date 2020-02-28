@@ -2,10 +2,10 @@
   <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
   <div class="form-group">
     <%= f.text_field :location, class:'form-control input search', placeholder:'Search by location' %>
-    <%= f.submit 'Search', class:' btn btn-primary input'%>
+    <%= f.submit 'Search', class:' btn btn-danger input-2'%>
   </div>
   <% end %>
-  <%= link_to 'See all the zeppelins', zeppelins_path, class: 'btn btn-primary' %>
+  <%= link_to 'See all the zeppelins', zeppelins_path, class: 'btn btn-danger' %>
 </div>
 <div class="container">
   <%= render 'zeppelins/list', zeppelins:  @zeppelins %>
