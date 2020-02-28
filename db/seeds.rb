@@ -62,12 +62,12 @@ p 'Creating zeppelins...'
 
 cities = ['Marseille', 'Lyon', 'Paris']
 
-zeppelin1 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user_id: rand(1..2))
-zeppelin2 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user_id: rand(1..2))
-zeppelin3 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user_id: rand(1..2))
-zeppelin4 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user_id: rand(1..2))
-zeppelin5 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user_id: rand(1..2))
-zeppelin6 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user_id: rand(1..2))
+zeppelin1 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user: User.all.sample)
+zeppelin2 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user: User.all.sample)
+zeppelin3 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user: User.all.sample)
+zeppelin4 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user: User.all.sample)
+zeppelin5 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user: User.all.sample)
+zeppelin6 = Zeppelin.create!(name: Faker::FunnyName.two_word_name, location: cities.sample, price: rand(100..10000), start_date: Faker::Date.backward, end_date: Faker::Date.forward, user: User.all.sample)
 
 p 'Done!'
 p '----------------------'
@@ -99,8 +99,8 @@ p '----------------------'
 p 'Seeding bookings ...'
 
 15.times do
-  zep = rand(1..6)
-  Booking.create!(user_id: rand(1..4), zeppelin_id: zep, booking_date: Faker::Date.between(from: Zeppelin.find(zep).start_date, to: Zeppelin.find(zep).end_date))
+  zep = Zeppelin.all.sample
+  Booking.create!(user: User.all.sample, zeppelin: zep, booking_date: Faker::Date.between(from: zep.start_date, to: zep.end_date))
   p 'Created booking!'
 end
 p '----------------------'
