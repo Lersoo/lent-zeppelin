@@ -2,7 +2,7 @@
     margin: 0 auto;
     max-width: 80%;
     .booking-header{
-        margin-top: 30px;
+        margin-top: 10px;
         display: flex;
         justify-content: space-between;
     }
@@ -16,14 +16,15 @@
     
     
     .zeppelin-info{
-        margin-top: 50px;
+        margin-top: 20px;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
-        background-color: #fff;
+        background-color: #1E1E1E;
         padding: 20px;
         position: relative;
+
     }
     
     @media (max-width: 600px) {
@@ -38,7 +39,7 @@
         bottom: 10px;
         right: 10px;
         text-decoration: none;
-        color: #d82727;
+        color: #d82727 !important;
         transition: transform ease 0.5s;
         &:hover{
             transform: scale(1.05);
@@ -46,7 +47,7 @@
     }
 
     h3{
-        background-color: #F4F4F4;
+        background-color: rgb(66, 64, 64);
         text-align: center;
     }
 
