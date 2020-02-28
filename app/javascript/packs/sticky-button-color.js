@@ -8,9 +8,9 @@ const initUpdateButtonOnScroll = () => {
     window.addEventListener('scroll', () => {
       buttons.forEach((button) => {
         if (window.scrollY >= 152) {
-          button.classList.add('button-white');
+          button.classList.add('button-colored');
         } else {
-          button.classList.remove('button-white');
+          button.classList.remove('button-colored');
         }
       });
     })

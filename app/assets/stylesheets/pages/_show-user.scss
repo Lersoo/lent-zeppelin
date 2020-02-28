@@ -24,6 +24,7 @@ $border-color: #8bc4e0;
   display: flex;
   flex-wrap: wrap;
   margin: 15px;
+  justify-content: center;
 }
 
 .zeppelin-card {
@@ -31,19 +32,22 @@ $border-color: #8bc4e0;
 }
 
 
-.button-white {
-  background-color: white;
+.button-colored {
+  background-color: rgb(30, 30, 30);
 }
 
 .right-board {
-  width: 200px;
+  width: 230px;
   border-left: 1px solid #fff3c4;
   padding: 0 10px;
+  text-align: left;
   .action-button {
+    text-align: center;
     position: sticky;
-    top: 20px;
+    top: 0px;
     h4 {
     font-size: 23px;
+    border: 2px solid #fff3c4;
     }
   }
 }
