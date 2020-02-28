@@ -15,9 +15,9 @@
 </head>
 <body>
   <% if user_signed_in? %>
-  <%= render 'layouts/signed-in-navbar' %>
+  <%= render 'layouts/signed-home' %>
   <% else %>
-  <%= render 'layouts/not-signed-in-navbar' %>
+  <%= render 'layouts/not-signed-home' %>
   <% end %>
 
   <%= yield %>

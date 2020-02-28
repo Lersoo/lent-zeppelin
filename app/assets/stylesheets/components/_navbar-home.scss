@@ -1,0 +1,70 @@
+.navbar-lewagon-home {
+  background: transparent;
+  justify-content: center;
+  position: relative;
+  .links {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    color: #fff3c4;
+  }
+}
+
+.navbar-lewagon-home .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon-home .logo .navbar-brand-home img {
+  width: 400px;
+
+}
+
+.navbar-lewagon-home h2 {
+  text-align: left;
+}
+
+
+@media (max-width: 840px){
+  .navbar .input{
+    display: none;
+  }
+}
+
+.navbar .form-group{
+  width: 190px;
+  display: flex;
+    // justify-content: center;
+    align-items: center;
+  }
+
+  #dropdownMenuButton {
+    opacity: 0.5;
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+
+  .navbar-group {
+    width: 33%;
+  }
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .title h2 {
+    text-align: center;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding: 0 2em;
+  }
+
+.dropdown {
+  margin-right: 2em;
+}
