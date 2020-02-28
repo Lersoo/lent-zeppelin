@@ -12,13 +12,13 @@
         <%= form_for :search, url: zeppelins_path, method: 'get' do |f| %>
         <div class="search-form">
           <%= f.text_field :location, class:'form-control input search', id:'search', placeholder:'Search' %>
-          <%= button_tag(class:'btn btn-primary input') do %>
+          <%= button_tag(class:'btn btn-danger input') do %>
           <i class="material-icons"> search </i>
           <% end %>
         </div>
+      <% end %>
       </div>
       <% end %>
-
       <div class="dropdown">
         <i class="material-icons dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> perm_identity </i>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
