@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
-  resources :bookings, only: %i[show destroy]
+  resources :bookings, only: %i[show destroy] do 
+    member do                             
+      get 'confirm'                          
+    end
+  end
 
   resources :users, only: [] do
     collection do

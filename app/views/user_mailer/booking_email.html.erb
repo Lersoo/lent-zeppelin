@@ -1,0 +1,40 @@
+<h1 style="text-align: center;">Thanks for your order !</h1>
+<h2 style="text-align: center;">We've sent a mail to the owner to confirme the order</h2>
+<style>
+.zeppelin-info{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #fff;
+        padding: 20px;
+        position: relative;
+    }
+    h3{
+        background-color: #F4F4F4;
+        text-align: center;
+
+    }
+
+</style>
+<div class="zeppelin-info">
+    <div class="zeppelin-info-text">
+        <%= image_tag 'logo_1.png', height:"200", width:"500"%>
+        <h3>Status</h3>
+        <p><%= @booking.status == true ? "Confirmé" : "Non confirmé" %></p>
+        <h3>Zeppelin</h3>
+        <p><%= @booking.zeppelin.name %></p>
+        <p>Location: <%= @booking.zeppelin.location %></p>
+        <h3>Owner</h3>
+        <p>Name: <%= @booking.zeppelin.user.name %></p>
+        <p>Email: <%= mail_to @booking.zeppelin.user.email %></p>
+        <h3>Booking Date</h3>
+        <p><%= @booking.booking_date.strftime("%d/%m/%Y") %></p>
+        <h3>Booking Price</h3>
+        <p><%= @booking.total_price%>€</p>
+        <h3>Renter</h3>
+        <p>Name: <%= @booking.user.name %></p>
+        <p>Send an e-mail: <%= mail_to @booking.user.email %></p>
+    </div>
+</div>

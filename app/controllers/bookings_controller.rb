@@ -1,7 +1,7 @@
 require 'date'
 
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[destroy show]
+  before_action :set_booking, only: %i[destroy show confirm]
 
   def show
   end
@@ -18,6 +18,8 @@ class BookingsController < ApplicationController
     @booking.total_price = 500
     if @booking.save
       redirect_to booking_path(@booking)
+      UserMailer.with(user: current_user,booking: @booking).reserve_email.deliver_now
+      UserMailer.with(user: current_user,booking: @booking).booking_email.deliver_now
     else
     end
   end
@@ -25,6 +27,13 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     redirect_to profile_users_path
+  end
+
+  def confirm
+    @booking.status = true
+    @booking.save
+    UserMailer.with(user: current_user,booking: @booking).confirm_user.deliver_now
+    redirect_to booking_path(@booking)
   end
 
   private
