@@ -15,7 +15,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.zeppelin = Zeppelin.find(params[:zeppelin_id])
     @booking.user = current_user
-    @booking.total_price = 500
     if @booking.save
       redirect_to booking_path(@booking)
     else

@@ -1,24 +1,25 @@
 <!-- TEST CODE -->
 <div class="page">
+
   <div class="middle-board">
     <div class="booking">
       <h3>My bookings</h3>
       <div class="book-cards">
         <% @user.bookings.each do |booking| %>
-          <%= render 'bookings/card', booking: booking %>
-          <% end %>
+        <%= render 'bookings/card', booking: booking %>
+        <% end %>
       </div>
     </div>
     <h3>My zeppelins</h3>
     <div class="zeppelins">
       <% @user.zeppelins.each do |zeppelin| %>
-        <%= render 'zeppelins/card', zeppelin: zeppelin %>
-        <% end %>
+      <%= render 'zeppelins/card', zeppelin: zeppelin %>
+      <% end %>
     </div>
   </div>
   <div class="right-board">
     <div class="action-button">
-    <h4><%= link_to "Add zeppelin", new_zeppelin_path %></h4>
+      <h4><%= link_to "Add zeppelin", new_zeppelin_path %></h4>
     </div>
   </div>
 </div>

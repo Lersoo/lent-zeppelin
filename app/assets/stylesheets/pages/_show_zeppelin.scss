@@ -43,4 +43,8 @@
 
 .zep-cont{
   padding: 0 20px;
+  .informations {
+    display: flex;
+    flex-direction: column;
+  }
 }
