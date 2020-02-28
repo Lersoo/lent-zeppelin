@@ -6,21 +6,20 @@
 
 <div class="show-zeppelin">
   <div class="zep-cont">
-    <h2>Informations</h2>
+    <h2>Informations :</h2>
     <div class="informations">
       <div class="text-infos">
-        <p>Zeppelin name : <%= @zeppelin.name %></p>
-        <p>Zeppelin location : <%= @zeppelin.location %></p>
-        <p>Zeppelin price per day : <%= @zeppelin.price %> €</p>
+        <p><i class="fas fa-map-marker-alt"></i> - <strong>Location</strong> : <%= @zeppelin.location %></p>
+        <p><i class="fas fa-coins"></i> - <strong>Price/day</strong> : <%= @zeppelin.price %> €</p>
         <% if @zeppelin.start_date.day < @zeppelin.end_date.day %>
-        <p>Book this zeppelin between the <%= @zeppelin.start_date.day %> and the <%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></p>
+        <p><i class="fas fa-calendar-alt"></i> - Book this zeppelin between the <strong><%= @zeppelin.start_date %> of <%= @zeppelin.end_date.strftime("%B") %></strong> and the <strong><%= @zeppelin.end_date %> of <%= @zeppelin.end_date.strftime("%B") %></strong></p>
         <% else %>
-        <p>Book this zeppelin between <strong> <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %></strong> and the <strong><%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></strong></p>
+        <p><i class="fas fa-calendar-alt"></i> - Book this zeppelin between <strong> <%= @zeppelin.start_date.day %> of <%= @zeppelin.start_date.strftime("%B") %></strong> and the <strong><%= @zeppelin.end_date.day %> of <%= @zeppelin.end_date.strftime("%B") %></strong></p>
         <% end %>
       </div>
       <!-- Button trigger modal -->
       <% if user_signed_in? %>
-      <button type="button" class="btn btn-primary book-button" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-danger book-button" data-toggle="modal" data-target="#exampleModal">
         Book now
       </button>
       <% end %>
@@ -54,7 +53,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit 'Book now', class: 'btn btn-primary' %>
+        <%= f.submit 'Book now', class: 'btn btn-danger' %>
         <% end %>
       </div>
 

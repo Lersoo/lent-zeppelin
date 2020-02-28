@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_02_28_095736) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,7 +40,6 @@ ActiveRecord::Schema.define(version: 2020_02_28_095736) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "zeppelin_id", null: false
     t.bigint "user_id", null: false
-    t.integer "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "booking_date"
