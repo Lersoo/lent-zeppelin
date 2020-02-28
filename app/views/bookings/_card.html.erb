@@ -1,20 +1,20 @@
 <!-- TEST CODE -->
 <%= link_to booking_path(booking), class: "book-card-link" do %>
-  <div class="card-product">
-    <div class="image" style="background-image: url(<%= cl_image_path booking.zeppelin.photo.key if booking.zeppelin.photo.attached?%>);">
+<div class="card-product">
+  <div class="image" style="background-image: url(<%= cl_image_path booking.zeppelin.photo.key if booking.zeppelin.photo.attached?%>);">
+  </div>
+  <div class="infos">
+    <div class="zep-name">
+      <h2><%= booking.zeppelin.name %></h2>
     </div>
-    <div class="infos">
-      <div class="zep-name">
-        <h2><%= booking.zeppelin.name %></h2>
+    <div class="card-product-infos">
+      <div class="book-date">
+        <p><%= booking.booking_date %></p>
       </div>
-      <div class="card-product-infos">
-        <div class="book-date">
-          <p><%= booking.booking_date %></p>
-        </div>
-        <div class="price">
-          <p><i class="material-icons"> euro_symbol </i><%= booking.total_price %></p>
-        </div>
+      <div class="price">
+        <p><i class="material-icons"> euro_symbol </i><%= booking.zeppelin.price %></p>
       </div>
     </div>
   </div>
+</div>
 <% end %>
