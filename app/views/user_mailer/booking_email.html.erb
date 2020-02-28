@@ -22,7 +22,7 @@
     <div class="zeppelin-info-text">
         <%= image_tag 'logo_1.png', height:"200", width:"500"%>
         <h3>Status</h3>
-        <p><%= @booking.status == true ? "Confirmé" : "Non confirmé" %></p>
+        <p><%= @booking.status == true ? "Confirmed" : "Not confirmed yet" %></p>
         <h3>Zeppelin</h3>
         <p><%= @booking.zeppelin.name %></p>
         <p>Location: <%= @booking.zeppelin.location %></p>
