@@ -12,7 +12,6 @@
 
 }
 
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -67,6 +66,9 @@
 
 .dropdown {
   margin-right: 2em;
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
 }
 
 .title {
