@@ -12,6 +12,5 @@ class Booking < ApplicationRecord
   belongs_to :user
 
   validates_with BookingDateValidator
-  validates :total_price, presence: true
   validates :zeppelin_id, presence: true, uniqueness: { scope: :booking_date }
 end
