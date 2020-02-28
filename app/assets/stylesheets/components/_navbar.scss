@@ -1,6 +1,7 @@
 .navbar-lewagon {
   background: white;
   justify-content: space-between;
+  padding: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -24,38 +25,44 @@
 .navbar .form-group{
   width: 190px;
   display: flex;
-    // justify-content: center;
-    align-items: center;
-  }
+  align-items: center;
+}
 
-  #dropdownMenuButton {
-    opacity: 0.5;
-    &:hover {
-      cursor: pointer;
-      opacity: 1;
-    }
+#dropdownMenuButton {
+  opacity: 0.5;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
   }
+}
 
-  .navbar-group {
-    width: 33%;
-  }
+.navbar-group {
+  width: 33%;
+}
 
-  .links {
-    display: flex;
-    justify-content: flex-end;
-  }
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  .title h2 {
-    text-align: center;
-  }
+.title h2 {
+  text-align: center;
+}
 
-  .search-form {
-    display: flex;
-    align-items: center;
-    width: 400px;
-    padding: 0 2em;
-  }
+.search-form {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  padding: 0 2em;
+}
 
 .dropdown {
   margin-right: 2em;
+}
+
+.title {
+  font-family: 'Permanent Marker', sans-serif;
+  a {
+    color: red;
+  }
 }
